@@ -34,7 +34,6 @@ $productos = $pdo->query('SELECT * FROM productos')->fetchAll();
 <!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8"><title>Panel Admin</title>
-<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Zain:wght@400;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css"></head>
 <body>
 <div class="container">

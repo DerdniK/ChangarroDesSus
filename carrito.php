@@ -38,26 +38,17 @@ foreach ($items as $item) {
 <!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8"><title>Carrito</title>
-<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Zain:wght@400;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css"></head>
 <body>
 <div class="container">
 <h2>Carrito de compras</h2>
+<a href="index.php">Volver a la tienda</a>
 <table><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Acción</th></tr>
 <?php foreach ($items as $item): ?>
 <tr><td><?= htmlspecialchars($item['nombre']) ?></td><td><?= $item['cantidad'] ?></td><td>$<?= number_format($item['precio'],2) ?></td><td><a href="carrito.php?eliminar=<?= $item['id'] ?>">Eliminar</a></td></tr>
 <?php endforeach; ?>
 </table>
 <p><b>Total: $<?= number_format($total,2) ?></b></p>
-
-<?php if (count($items) > 0): ?>
-    <form action="compra.php" method="post">
-        <input type="hidden" name="total" value="<?= $total ?>">
-        <button type="submit">Finalizar compra</button>
-    </form>
-<?php endif; ?>
-<br>
-<a href="index.php">Volver a la tienda</a>
 </div>
 </body>
 </html>
